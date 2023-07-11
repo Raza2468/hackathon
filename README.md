@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Full Stack Next.js Hackathon One
 
-## Getting Started
+The Hackathon challenge:
 
-First, run the development server:
+1. Build out the project given the [Live Site](https://full-stack-ecommerce-clothing-web.vercel.app/) using Next.js 13.4+ Tailwind CSS, and Shadcn UI
+2. Implementing cart functionality using Vercel Postgres SQL and Drizzle ORM 
+3. Connecting to Sanity as back end CMS with all the product Data
+4. Connecting Stripe APIs to power online payment processing for e-commerce
+5. Use React-hot-toast library to adds beautiful notifications
+6. Use Icons from Lucid (default from Shadcn-UI)
+7. [Stripe Test Credit Cards](https://stripe.com/docs/testing)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Note: We are using Sanity in order to support [Visual Editing](https://www.sanity.io/docs/vercel-visual-editing). You can learn more about visual editing by reading this [blog post](https://www.sanity.io/blog/visual-editing-sanity-vercel).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Advanced Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Once implementing the above basic functionality, you will add user signin and signup fuctionality i.e. and user management module. In addition, you will add a admin panel from where the admin can do Order Fulfillment, Manage Inventory, etc. 
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
