@@ -4,29 +4,38 @@ import Header from "./Header/page";
 
 
 export const getProducr = async () => {
-  // let res = await client.fetch(`*[_type=="Product"]`)
-    let res = await client.fetch(`*[_type=="Product"]{
-  name
-    }`)
+  let res = await client.fetch(`*[_type=="Product"]`)
+  // let res = await client.fetch(`*[_type=="Product"]{
+  // name
+  //   }`)
   return res
+}
+
+interface Iproduct {
+  Price: string,
+  name: string,
+  Description: string,
+  Image: string[]
+
 }
 export default async function Home() {
 
-  let data = await getProducr()
+  let data:Iproduct[] = await getProducr()
   console.log(data, "raza");
 
   return (
     <>
-    {/* <Header /> */}
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+      {/* <Header /> */}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       {
         data.map((item: any) => {
-          <h1>{item.name}sssssssssssssssssss</h1>
+          { console.log(item) }
+          return <h1>{item.name}</h1>
         })
       }
       {/* <main className="flex min-h-screen flex-col items-center justify-between p-24">

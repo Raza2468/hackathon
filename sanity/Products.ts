@@ -21,6 +21,13 @@ export default {
             name: "Description",
             type: "string",
             title: "Description"
+        }, {
+            name: "Categories",
+            title: "Product Categories",
+            type: "reference",
+            to: [{
+                type: "Categories"
+            }]
         }
     ]
 }
