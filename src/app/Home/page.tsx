@@ -1,10 +1,37 @@
 import React from 'react';
+import { client } from '@/lib/SanityClient';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
+import Header from "../Header/page";
+import { Product } from './Product';
 
-export default function Home() {
+
+export const getProducr = async () => {
+  let res = await client.fetch(`*[_type=="Product"]`)
+  // let res = await client.fetch(`*[_type=="Product"]{
+  // name
+  //   }`)
+  return res
+}
+
+interface Iproduct {
+  Price: string,
+  name: string,
+  Description: string,
+  Image: string[]
+
+}
+
+export const HomePage = async () => {
+
+
+
+  let data: Iproduct[] = await getProducr()
+  // console.log(data, "raza");
+
   return (
-    <div>
+    <>
+      <Header />
       <div style={{ backgroundColor: "#AA9271" }} className='h-screen flex flex-col relative sm:flex-row items-center justify-between'>
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto flex flex-wrap">
@@ -95,8 +122,26 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="text-gray-600 body-font" style={{ backgroundColor: "#AA9271" }} >
+        <div className="container px-5 py-24 mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">PRODUCTS.</p>
+            <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Check What We Have</h1>
+          </div>
+          <div className="flex flex-wrap -m-4 justify-around">
+            {data.map((item) => {
+              return (
+                <>
+                  <Product item={item} />
+                </>
+              )
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* <section className="text-gray-600 body-font" style={{ backgroundColor: "#AA9271" }} >
         <div className="container px-5 py-24 mx-auto">
           <div className="text-center mb-20">
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">PRODUCTS.</p>
@@ -304,7 +349,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
       <br />
@@ -313,6 +358,6 @@ export default function Home() {
       <br />
       <br />
       <br />
-    </div>
+    </>
   )
 }

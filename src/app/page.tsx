@@ -1,43 +1,44 @@
 import { client } from '@/lib/SanityClient'
+import { HomePage } from "./Home/page";
 import Image from 'next/image';
 import Header from "./Header/page";
 
 
-export const getProducr = async () => {
-  let res = await client.fetch(`*[_type=="Product"]`)
-  // let res = await client.fetch(`*[_type=="Product"]{
-  // name
-  //   }`)
-  return res
-}
+// export const getProducr = async () => {
+//   let res = await client.fetch(`*[_type=="Product"]`)
+//   // let res = await client.fetch(`*[_type=="Product"]{
+//   // name
+//   //   }`)
+//   return res
+// }
 
-interface Iproduct {
-  Price: string,
-  name: string,
-  Description: string,
-  Image: string[]
+// interface Iproduct {
+//   Price: string,
+//   name: string,
+//   Description: string,
+//   Image: string[]
 
-}
+// }
 export default async function Home() {
 
-  let data:Iproduct[] = await getProducr()
-  console.log(data, "raza");
+  // let data: Iproduct[] = await getProducr()
+  // console.log(data, "raza");
 
   return (
     <>
-      {/* <Header /> */}
+      {/* <HomePage /> */}
+      {/* <br />
       <br />
       <br />
       <br />
+      <br /> */}
       <br />
-      <br />
-      <br />
-      {
+      {/* {
         data.map((item: any) => {
           { console.log(item) }
           return <h1>{item.name}</h1>
         })
-      }
+      } */}
       {/* <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
           <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
