@@ -13,7 +13,7 @@ export const GET = async (request: NextRequest) => {
 }
 
 
-export const POST = async (request: Request) => {
+export const POST = async (request: NextRequest) => {
 
     let req = await request.json();
 
@@ -21,12 +21,18 @@ export const POST = async (request: Request) => {
     let setcookies = cookies()
 
     let user_id = cookies().get("user_id")
+    console.log(user_id, "get user_id");
 
-    console.log(req, user_id?.value, "coll this Api");
 
     if (!user_id) {
         setcookies.set("user_id", uid)
+
+        // console.log(cookies().get("user_id")?.value, "coll this Api");
+        // console.log("===>", user_id?.name=='user_id', "raza");
+    } else {
     }
+    // console.log(req, user_id?.value, "coll this Api");
+console.log(req.product_id,user_id);
 
     try {
         const res = await db.insert(cartTable).values({
